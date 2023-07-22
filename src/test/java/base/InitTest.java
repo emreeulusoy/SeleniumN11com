@@ -1,5 +1,6 @@
 package base;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.TestInstance;
@@ -22,7 +23,7 @@ public class InitTest {
 
     @BeforeAll
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver");
+        WebDriverManager.chromedriver().setup();
 
         driver = new ChromeDriver();
         driver.get("https://www.n11.com/");
